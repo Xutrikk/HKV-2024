@@ -1,0 +1,50 @@
+---- Исходные данные ----
+extra numb func rand(numb ra)
+extra numb func strlen(stroke s)
+extra numb func input()
+
+numb func saul (numb q, numb v, numb z )[
+ new numb result;
+ state:q > v$
+ correctly:[
+result = 10;
+write 'true';
+]
+wrong:[
+result = 5 + z;
+write 'false';
+]
+ $
+ return result;
+];
+
+
+numb func goodman(numb start , numb end)[
+ new numb soprano = 2;
+ state: start<end$
+ cycle[
+ start = start+4;
+ soprano = soprano*3; 
+]$
+ return soprano;
+]
+
+
+main
+[
+ new numb a = 4;
+ new numb b =input();
+ new numb c = strlen('xutrikk');
+ new boolean b1 =false;
+ new symbol S = "x";
+ write 'Результат выполнения функции saul:';
+ new numb result = saul(a,b,c);
+ write result;
+ write 'Результат выполнения функции goodman:';
+ new numb k = goodman(a,b);
+ write k;
+ new numb ran = rand(1000);
+ write 'Случайное число:';
+ write ran;
+ return 0;
+]
